@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
         if (flag == null) return;
         if (distance == null) return;
         float lenght = flag.transform.position.x - car.transform.position.x;
-        distance.GetComponent<TextMeshProUGUI>().text = "Distance : " + lenght.ToString("F2") + "m";
+        distance.GetComponent<TextMeshProUGUI>().text = "거리 : " + lenght.ToString("F2") + "m";
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
