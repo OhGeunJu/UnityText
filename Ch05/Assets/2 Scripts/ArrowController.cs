@@ -8,6 +8,7 @@ public class ArrowController : MonoBehaviour
     public float r1 = 0.4f;
     public float r2 = 0.9f;
     GameObject player;
+    //public GameObject gd; 안됨
 
     void Start()
     {
@@ -32,6 +33,8 @@ public class ArrowController : MonoBehaviour
 
         if(distance < r1 + r2)
         {
+            GameObject gd = GameObject.Find("GameDirector");
+            gd.GetComponent<GameDirector>().DecreaseHP();
             Destroy(gameObject);
         }
 
