@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../My project/Assets/2 Script"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	},
+	"extensions": {
+		"recommendations": [
+			"kleber-swf.unity-code-snippets",
+			"visualstudiotoolsforunity.vstuc"
+		]
+	}
+}
