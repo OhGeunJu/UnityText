@@ -22,6 +22,7 @@ public class PlayerContorller : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && rigid2D.velocity.y == 0)
         {
+            animator.SetTrigger("JumpTrigger");
             rigid2D.AddForce(transform.up * jumpForce);
             // rigid2D.AddForce(new Vector2(0,1) * jumpForce);
         }
@@ -42,7 +43,15 @@ public class PlayerContorller : MonoBehaviour
             transform.localScale = new Vector3(key, 1, 1);
         }
 
-        animator.speed = speedX / 2.0f;
+        if(rigid2D.velocity.y == 0)
+        {
+            animator.speed = speedX / 2.0f;
+        }
+        else
+        {
+            animator.speed = 1.0f;
+        }
+
 
         if (transform.position.y < -10)
         {
@@ -53,5 +62,19 @@ public class PlayerContorller : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         SceneManager.LoadScene("ClearScene");
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag != "Cloud") return;
+
+        transform.SetParent(collision.gameObject.transform);
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag != "Cloud") return;
+        
+        transform.SetParent(null);
     }
 }
