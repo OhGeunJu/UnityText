@@ -30,3 +30,6 @@ public class MoveCloud : MonoBehaviour
         transform.Translate(moveSpeed*directoin, 0, 0);
     }
 }
+'pip install -U <name>'
+pip install -U playwright kaleido nbformat pandas plotly
+playwright install
