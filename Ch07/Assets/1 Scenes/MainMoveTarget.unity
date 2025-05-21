@@ -1260,6 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPrefab: {fileID: 5368180792768345040, guid: f2c0cd51674fefe4a9634f865ac893fc, type: 3}
+  minDistance: 10
 --- !u!4 &1315958844
 Transform:
   m_ObjectHideFlags: 0
@@ -1706,7 +1707,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &1749227562
 CapsuleCollider:
@@ -1810,8 +1811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf7a8a3379ecc3418f6f5df20d2c879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
-  rotationSpeed: 20
 --- !u!114 &1749227567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1825,6 +1824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bamsoniPrefab: {fileID: 3203067955756937911, guid: cbfa51800c425b143a9971fbc41b9a2e, type: 3}
+  throwForce: 4
 --- !u!1 &1799982513
 GameObject:
   m_ObjectHideFlags: 0

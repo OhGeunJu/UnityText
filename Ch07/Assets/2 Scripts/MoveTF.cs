@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveTF : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float rotationSpeed = 15f;
+    private float moveSpeed = 20f;
+    private float rotationSpeed = 50f;
 
     
 
