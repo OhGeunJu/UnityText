@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class BasketController : MonoBehaviour
 {
+    public AudioClip appleSE;
+    public AudioClip bombSE;
+
+    AudioSource aud;
+
     void Start()
     {
         Application.targetFrameRate = 60;
+        aud = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -22,5 +28,15 @@ public class BasketController : MonoBehaviour
                 transform.position = new Vector3(x, transform.position.y, z);
             }
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Apple")
+            aud.PlayOneShot(appleSE);
+        else
+            aud.PlayOneShot(bombSE);
+
+        Destroy(other.gameObject);
     }
 }
